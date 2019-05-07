@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class UserService {
 
-  private isUserLoggedIn;
   public usserLogged:User;
+  private isUserLoggedIn;
 
   constructor() { 
   	this.isUserLoggedIn = false;

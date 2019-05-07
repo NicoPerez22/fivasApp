@@ -9,10 +9,12 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
-  selectedUser: User = {
+  user: User = {
+    id: '',
     username: '',
     email: '',
-    password: ''
+    password: '',
+    token: '',
   };
 
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
@@ -22,11 +24,11 @@ export class LoginService {
   //HttpMethods
 
   postUser(user: User): Observable<any>{
-    return this.http.post<any>(environment.apiBaseUrl + 'auth/signup', user,this.noAuthHeader);
+    return this.http.post<any>(environment.apiBaseUrl + 'auth/signup', user);
   }
 
-  login(authCredentials) {
-    return this.http.post(environment.apiBaseUrl + 'auth/signin', authCredentials,this.noAuthHeader);
+  login(user) {
+    return this.http.post(environment.apiBaseUrl + 'auth/signin', {user: user},this.noAuthHeader);
   }
 
   getUserProfile() {

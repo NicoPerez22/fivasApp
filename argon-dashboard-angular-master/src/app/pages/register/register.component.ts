@@ -11,10 +11,9 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-
   user = new User()
 
-  constructor(private loginService: LoginService, private router: Router) { 
+  constructor(private loginService: LoginService, private router: Router) {
   }
 
   ngOnInit() {
@@ -22,22 +21,16 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     this.loginService.postUser(this.user)
-    .subscribe(
-      res => {
-        console.log(this.user)
-
-        this.router.navigate(['dashboard'])
-      },
-      err => {
-        console.log("entre por aca")
-/*
-        if (err.status === 422) {
+      .subscribe(
+        res => {
           console.log(this.user)
+
+          this.router.navigateByUrl('/login')
+        },
+        err => {
+          console.log("entre por aca")
         }
-        else
-           'Something went wrong.Please contact admin.';  */
-      }
-  );
+    );
   }
 
 }

@@ -13,18 +13,16 @@ export class LoginComponent implements OnInit {
   constructor(private Router:Router, private loginService: LoginService, private userService: UserService) {}
 
   user = new User()
-
+  
   ngOnInit() {
 
   }
-    onSubmit(form) {
+    onSubmit() {
   
       // Calls service to login user to the api rest
-      this.loginService.login(form).subscribe(
-  
+      this.loginService.login(this.user).subscribe(
         res => {       
-          this.userService.setUserLoggedIn(form);
-  
+          this.Router.navigate(['dashboard'])
         },
         error => {
           console.error(error);
@@ -36,7 +34,7 @@ export class LoginComponent implements OnInit {
     }
   
     navigate() {    
-      this.Router.navigateByUrl('/home');
+      this.Router.navigateByUrl('/login');
     }
 
   CrearCuenta() {
