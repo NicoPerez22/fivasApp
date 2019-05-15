@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-      this.loadAllUsers();
+    //   this.loadAllUsers();
   }
 
   ngOnDestroy() {
@@ -34,15 +34,15 @@ export class DashboardComponent implements OnInit, OnDestroy {
       this.currentUserSubscription.unsubscribe();
   }
 
-  deleteUser(id: number) {
-      this.userService.delete(id).pipe(first()).subscribe(() => {
-          this.loadAllUsers()
-      });
-  }
+//   deleteUser(id: number) {
+//       this.userService.delete(id).pipe(first()).subscribe(() => {
+//           this.loadAllUsers()
+//       });
+//   }
 
-  private loadAllUsers() {
-      this.userService.getAll().pipe(first()).subscribe(users => {
-          this.users = users;
-      });
-  }
+//   private loadAllUsers() {
+//       this.userService.getAll().pipe(first()).subscribe(users => {
+//           this.users = users;
+//       });
+//   }
 }
