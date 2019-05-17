@@ -24,11 +24,11 @@ export class LoginService {
   //HttpMethods
 
   postUser(user: User): Observable<any>{
-    return this.http.post<any>(environment.apiBaseUrl + 'auth/signup', user);
+    return this.http.post<any>(environment.apiBaseUrl + 'auth/register', user);
   }
 
   login(user) {
-    return this.http.post(environment.apiBaseUrl + 'auth/signin', {user: user},this.noAuthHeader);
+    return this.http.post(environment.apiBaseUrl + 'auth/login', user,this.noAuthHeader);
   }
 
   getUserProfile() {

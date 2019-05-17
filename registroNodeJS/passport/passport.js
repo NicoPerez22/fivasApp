@@ -8,9 +8,11 @@ module.exports = function (passport) {
 		done(null, user);
 	});
 
-	passport.deserializeUser(function (obj, done) {
-		done(null, obj);
+	passport.deserializeUser(function (user, done) {
+		done(null, user);
 	});
+
+	//passport.deserializeUser((id, done)=>{ passport.deserializeUser((id, done) => { User.findById(id).then((user) => { done(null, user); }).catch(done); }); });
 
 	passport.use(new LocalStrategy({
 		passReqToCallback: true
@@ -22,7 +24,7 @@ module.exports = function (passport) {
 		var db = mysql.createConnection(config);
 		db.connect();
 
-		db.query('SELECT * FROM users WHERE email = ?', email, function (err, rows, fields) {
+		db.query('SELECT * FROM users WHERE username = ?', username, function (err, rows, fields) {
 			if (err) throw err;
 			db.end();
 			if (rows.length > 0) {

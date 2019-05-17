@@ -22,13 +22,12 @@ export class LoginComponent implements OnInit {
       // Calls service to login user to the api rest
       this.loginService.login(this.user).subscribe(
         res => {       
-          this.Router.navigate(['dashboard'])
+          this.Router.navigateByUrl('/dashboard')
         },
         error => {
           console.error(error);
   
         },
-        () => this.navigate()
       );
   
     }
