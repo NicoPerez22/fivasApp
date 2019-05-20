@@ -11,10 +11,11 @@ export class LoginService {
 
   user: User = {
     id: '',
+    name: '',
     username: '',
     email: '',
     password: '',
-    token: '',
+    //token: '',
   };
 
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
@@ -24,11 +25,11 @@ export class LoginService {
   //HttpMethods
 
   postUser(user: User): Observable<any>{
-    return this.http.post<any>(environment.apiBaseUrl + 'auth/register', user);
+    return this.http.post<any>(environment.apiBaseUrl + 'auth/signup', user);
   }
 
   login(user) {
-    return this.http.post(environment.apiBaseUrl + 'auth/login', user,this.noAuthHeader);
+    return this.http.post(environment.apiBaseUrl + 'auth/signin', user,this.noAuthHeader);
   }
 
   getUserProfile() {

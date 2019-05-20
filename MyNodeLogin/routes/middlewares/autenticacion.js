@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
-
+const app = express();
+var express = require('express');
 
 // =====================
 // Verificar Token

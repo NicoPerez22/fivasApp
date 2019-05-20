@@ -23,9 +23,8 @@ export class RegisterComponent implements OnInit {
     this.loginService.postUser(this.user)
       .subscribe(
         res => {
-          console.log(this.user)
-
           this.router.navigateByUrl('/login')
+          console.log(this.user)
         },
         err => {
           console.log("entre por aca")

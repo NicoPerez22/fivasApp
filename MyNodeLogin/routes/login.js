@@ -1,6 +1,7 @@
 var mysql = require('mysql');
 const jwt = require('jsonwebtoken');
 var express = require('express');
+const app = express();
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');

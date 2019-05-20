@@ -15,13 +15,13 @@ app.use(cors());
 
 
 // Configuración global de rutas
-app.use(require('./routes/index'));
+app.use(require('./routes/login'));
 
-app.use(session({
-	secret: 'secret',
-	resave: true,
-	saveUninitialized: true
-}));
+// app.use(session({
+// 	secret: 'secret',
+// 	resave: true,
+// 	saveUninitialized: true
+// }));
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 
