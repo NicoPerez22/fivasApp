@@ -9,8 +9,9 @@ export class UserService {
   public usserLogged:User;
   private isUserLoggedIn;
 
-  constructor() { 
-  	this.isUserLoggedIn = false;
+  constructor(private http: HttpClient) { 
+    this.isUserLoggedIn = false;
+    
   }
 
   setUserLoggedIn(user:User) {
@@ -24,4 +25,13 @@ export class UserService {
   	return JSON.parse(localStorage.getItem('currentUser'));
   }
 
+  public url_servidor = "";
+
+	public postFileImagen(imagenParaSubir: File){
+
+		const formData = new FormData(); 
+		formData.append('imagenPropia', imagenParaSubir, imagenParaSubir.name); 
+		return this.http.post(this.url_servidor, formData);
+
+	}
 }

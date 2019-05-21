@@ -1,0 +1,274 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+        <!-- Card stats -->
+        <div class="row">
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">DT</h5>
+                      <span class="h2 font-weight-bold mb-0">NicoPerez22</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                        <i class="fas fa-chart-bar"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <p class="mt-3 mb-0 text-muted text-sm">
+                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                    <span class="text-nowrap">Since last month</span>
+                  </p> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Sub DT</h5>
+                      <span class="h2 font-weight-bold mb-0">AllBoysFloresta1</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                        <i class="fas fa-chart-pie"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <p class="mt-3 mb-0 text-muted text-sm">
+                    <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
+                    <span class="text-nowrap">Since last week</span>
+                  </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page content -->
+  <div class="container-fluid mt--7">
+    <div class="row">
+      <div class="col">
+            <div class="col-xl-12">
+                <div class="card shadow">
+                  <div class="card-header border-0">
+                    <div class="row align-items-center">
+                      <div class="col">
+                        <h3 class="mb-0">Mi Equipo > Hacha y Tiza FC</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <ul class="nav nav-tabs">
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#">Invitar Jugador</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Adminsitrar Plantel</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Cambiar Logo</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Calendario</a>
+                      </li>
+                    </ul> -->
+
+                    <ngb-tabset [justify]="currentJustify">
+                        <ngb-tab title="Inicio">
+                          <ng-template ngbTabContent>
+
+                          </ng-template>
+                        </ngb-tab>
+
+                        <ngb-tab ngb-tab title="Invitar Jugador">
+                          <ng-template ngbTabContent>
+                              <div class="card-header border-0">
+                                  <div class="row align-items-center">
+                                    <div class="col">
+                                      <h3 class="mb-0">Buscar Jugador</h3>
+                                    </div>
+                                  </div>
+                                  <br>
+                                  <form class="form-inline md-form form-sm active-cyan active-cyan-2 mt-2">
+                                      <i class="fas fa-search" aria-hidden="true"></i>
+                                      <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+                                    </form>
+                                    <br>
+                                  <div class="row align-items-center">
+                                      <div class="col">
+                                        <h3 class="mb-0">Escriba el ID del jugador que quiere invitar a su equipo</h3>
+                                      </div>
+                                    </div>
+                                </div>
+                          </ng-template>
+                        </ngb-tab>
+
+
+                        <ngb-tab title="Mis Jugadores">
+                          <ng-template ngbTabContent>
+                              <div class="col-xl-12">
+                                  <div class="card shadow">
+                                    <div class="card-header border-0">
+                                      <div class="row align-items-center">
+                                        <div class="col">
+                                          <h3 class="mb-0">Plantilla</h3>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                      <!-- Projects table -->
+                                      <table class="table align-items-center table-flush">
+                                        <thead class="thead-light">
+                                          <tr>
+                                            <th scope="col">Avatar</th>
+                                            <th scope="col">Jugador</th>
+                                            <th scope="col">Posicion</th>
+                                            <th scope="col">Goles</th>
+                                            <th scope="col">Asistencias</th>
+                                            <th scope="col">Eliminar</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th>
+                                              <div class="avatar-group">
+                                                  <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Ryan Tompson">
+                                                    <img alt="Image placeholder" src="../assets/img/theme/team-1-800x800.jpg" class="rounded-circle">
+                                                  </a>
+                                                </div>
+                                            </th>
+                                            <th scope="row">
+                                              NicoPerez22
+                                            </th>
+                                            <td>
+                                              35
+                                            </td>
+                                            <td>
+                                              <div class="d-flex align-items-center">
+                                                <span class="mr-2">60%</span>
+                                              </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                  <span class="mr-2">60%</span>
+                                                </div>
+                                              </td>
+                                            <td>
+                                                <button class="btn btn-danger">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                              <th>
+                                                <div class="avatar-group">
+                                                    <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Ryan Tompson">
+                                                      <img alt="Image placeholder" src="../assets/img/theme/team-1-800x800.jpg" class="rounded-circle">
+                                                    </a>
+                                                  </div>
+                                              </th>
+                                              <th scope="row">
+                                                NicoPerez22
+                                              </th>
+                                              <td>
+                                                35
+                                              </td>
+                                              <td>
+                                                <div class="d-flex align-items-center">
+                                                  <span class="mr-2">60%</span>
+                                                </div>
+                                              </td>
+                                              <td>
+                                                  <div class="d-flex align-items-center">
+                                                    <span class="mr-2">60%</span>
+                                                  </div>
+                                                </td>
+                                              <td>
+                                                  <button class="btn btn-danger">
+                                                      <i class="fa fa-trash"></i>
+                                                  </button>
+                                              </td>
+                                            </tr>                                          <tr>
+                                                <th>
+                                                  <div class="avatar-group">
+                                                      <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Ryan Tompson">
+                                                        <img alt="Image placeholder" src="../assets/img/theme/team-1-800x800.jpg" class="rounded-circle">
+                                                      </a>
+                                                    </div>
+                                                </th>
+                                                <th scope="row">
+                                                  NicoPerez22
+                                                </th>
+                                                <td>
+                                                  35
+                                                </td>
+                                                <td>
+                                                  <div class="d-flex align-items-center">
+                                                    <span class="mr-2">60%</span>
+                                                  </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                      <span class="mr-2">60%</span>
+                                                    </div>
+                                                  </td>
+                                                <td>
+                                                    <button class="btn btn-danger">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                              </tr>                                          <tr>
+                                                  <th>
+                                                    <div class="avatar-group">
+                                                        <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip" data-original-title="Ryan Tompson">
+                                                          <img alt="Image placeholder" src="../assets/img/theme/team-1-800x800.jpg" class="rounded-circle">
+                                                        </a>
+                                                      </div>
+                                                  </th>
+                                                  <th scope="row">
+                                                    NicoPerez22
+                                                  </th>
+                                                  <td>
+                                                    35
+                                                  </td>
+                                                  <td>
+                                                    <div class="d-flex align-items-center">
+                                                      <span class="mr-2">60%</span>
+                                                    </div>
+                                                  </td>
+                                                  <td>
+                                                      <div class="d-flex align-items-center">
+                                                        <span class="mr-2">60%</span>
+                                                      </div>
+                                                    </td>
+                                                  <td>
+                                                      <button class="btn btn-danger">
+                                                          <i class="fa fa-trash"></i>
+                                                      </button>
+                                                  </td>
+                                                </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                          </ng-template>
+                        </ngb-tab>
+
+                        <ngb-tab ngb-tab title="Cambiar logo">
+                            <ng-template ngbTabContent>
+                              <br>
+                                <input type="file" (change)="cargandoImagen($event.target.files)" multiple>
+                            </ng-template>
+                          </ngb-tab>
+                      </ngb-tabset>
+                </div>
+              </div>
+        </div>
+    </div>
+  </div>
+  

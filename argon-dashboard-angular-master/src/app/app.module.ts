@@ -16,6 +16,7 @@ import { UserService } from './services/user.service';
 import { LoginService } from './pages/login/login.service';
 
 
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -29,7 +30,7 @@ import { LoginService } from './pages/login/login.service';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
   ],
   providers: [UserService, LoginService],
   bootstrap: [AppComponent]
