@@ -18,15 +18,15 @@ module.exports = function(app) {
 	
 	app.get('/api/test/admin', [authJwt.verifyToken, authJwt.isAdmin], controller.adminBoard);
 
-  app.route('/tasks')
-    .get(controllerEquipo.list_all_tasks)
-    .post(controllerEquipo.create_a_task);
+  // app.route('/tasks')
+  //   .get(controllerEquipo.list_all_tasks)
+  //   .post(controllerEquipo.create_a_task);
    
-   app.route('/tasks/:taskId')
-    .get(controllerEquipo.read_a_task)
-    .put(todcontrollerEquipooList.update_a_task)
-    .delete(controllerEquipo.delete_a_task);
-    };
+  //  app.route('/tasks/:taskId')
+  //   .get(controllerEquipo.read_a_task)
+  //   .put(todcontrollerEquipooList.update_a_task)
+  //   .delete(controllerEquipo.delete_a_task);
+  //   };
 
 	app.use((req, res, next) => {
 		res.header('Access-Control-Allow-Origin', '*');

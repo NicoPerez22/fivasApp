@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-equipo',
@@ -11,7 +12,7 @@ export class AdminEquipoComponent implements OnInit {
   public respuestaImagenEnviada;
   public resultadoCarga;
 
-  constructor(private enviandoImagen: UserService) { }
+  constructor(private enviandoImagen: UserService, private router:Router) { }
 
   ngOnInit() {
   }
@@ -43,6 +44,10 @@ export class AdminEquipoComponent implements OnInit {
 		);//FIN DE METODO SUBSCRIBE
 
     }
-  currentJustify = 'justified';
+	currentJustify = 'justified';
+	
+	reportar() {
+		this.router.navigateByUrl('/reportes')
+	}
 
 }
