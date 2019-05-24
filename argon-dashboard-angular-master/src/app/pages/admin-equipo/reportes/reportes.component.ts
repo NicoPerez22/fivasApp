@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportesComponent implements OnInit {
 
+  selecjugadores = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-   algo = true;
+
+  seleccionarJugador() {
+    this.selecjugadores = true;
+  }
 }
