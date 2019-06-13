@@ -1,3 +1,4 @@
+// var mysql = require('mysql');
 const env = {
   database: 'baseregistronodejs',
   username: 'root',
@@ -11,5 +12,14 @@ const env = {
 	  idle: 10000
   }
 };
- 
+
+// const connection = mysql.createConnection({
+//   database: 'baseregistronodejs',
+//   username: 'root',
+//   password: '',
+//   host: 'localhost',
+//   dialect: 'mysql',
+// });
+
 module.exports = env;
+// module.exports = connection;

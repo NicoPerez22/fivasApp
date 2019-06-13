@@ -10,6 +10,8 @@ router.get('/', controllers.HomeController.index);
 router.get('/auth/signup', controllers.UserController.getSignUp);
 router.post('/auth/signup', controllers.UserController.postSignUp);
 router.get('/auth/signin', controllers.UserController.getSignIn);
+router.post('/login', controllers.UserController.postUserLogin)
+router.get('/secure', controllers.UserController.secure)
 
 router.post('/auth/signin', passport.authenticate('local',{
 	successRedirect: '/users/panel',
@@ -22,7 +24,6 @@ router.get('/users/panel', AuthMiddleware.isLogged, controllers.UserController.g
 
 
 // router.post('/auth/signin', function (req, res, next) {
-// 	console.log(req.user)
 // 	passport.authenticate('local', { session: false }, (err, user, info) => {
 // 		if (err || !user) {
 // 			return res.status(400).json({

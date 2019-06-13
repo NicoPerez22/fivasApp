@@ -15,7 +15,7 @@ export class LoginService {
     username: '',
     email: '',
     password: '',
-    //token: '',
+    token: '',
   };
 
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
@@ -29,7 +29,8 @@ export class LoginService {
   }
 
   login(user) {
-    return this.http.post(environment.apiBaseUrl + 'auth/signin', user,this.noAuthHeader);
+    return this.http.post(environment.apiBaseUrl + 'login', user,this.noAuthHeader);
+    
   }
 
   getUserProfile() {

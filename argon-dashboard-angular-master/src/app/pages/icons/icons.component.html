@@ -103,9 +103,9 @@
         <div class="card-body">
           <div class="row icon-examples">
             <div class="col-lg-3 col-md-6">
-              <button type="button" placement="top-center" triggers="hover focus click" ngbTooltip="{{copy === 'active-40' ? 'Copied':'Ver Torneo'}}"  class="btn-icon-clipboard" ngxClipboard [cbContent]="'active-40'" (cbOnSuccess) = "copy = 'active-40'">
+              <button type="button" placement="top-center" (click)="verTorneo()" triggers="hover focus click" ngbTooltip="{{copy === 'active-40' ? 'Copied':'Ver Torneo'}}"  class="btn-icon-clipboard" ngxClipboard [cbContent]="'active-40'" (cbOnSuccess) = "copy = 'active-40'">
                 <div>
-                  <i class="ni ni-active-40"></i>
+                  <i class="ni ni-bullet-list-67"></i>
                   <span>Fivas Argentina - Primera Division</span>
                 </div>
               </button>
@@ -113,7 +113,7 @@
             <div class="col-lg-3 col-md-6">
                 <button type="button" placement="top-center" triggers="hover focus click" ngbTooltip="{{copy === 'active-40' ? 'Copied':'Ver Torneo'}}"  class="btn-icon-clipboard" ngxClipboard [cbContent]="'active-40'" (cbOnSuccess) = "copy = 'active-40'">
                   <div>
-                    <i class="ni ni-active-40"></i>
+                    <i class="ni ni-bullet-list-67"></i>
                     <span>Fivas Argentina - Segunda Division</span>
                   </div>
                 </button>
@@ -121,7 +121,7 @@
               <div class="col-lg-3 col-md-6">
                   <button type="button" placement="top-center" triggers="hover focus click" ngbTooltip="{{copy === 'active-40' ? 'Copied':'Ver Torneo'}}"  class="btn-icon-clipboard" ngxClipboard [cbContent]="'active-40'" (cbOnSuccess) = "copy = 'active-40'">
                     <div>
-                      <i class="ni ni-active-40"></i>
+                      <i class="ni ni-bullet-list-67"></i>
                       <span>Fivas Argentina - Copa Argentina</span>
                     </div>
                   </button>
@@ -141,7 +141,7 @@
           <div class="card-body">
             <div class="row icon-examples">
               <div class="col-lg-3 col-md-6">
-                <button type="button" placement="top-center" triggers="hover focus click"  class="btn-icon-clipboard">
+                <button type="button" placement="top-center" triggers="hover focus click"  class="btn-icon-clipboard" (click)="crearTorneo()" >
                   <div>
                     <i class="ni ni-active-40"></i>
                     <span>Nuevo Torneo</span>

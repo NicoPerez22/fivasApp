@@ -1,5 +1,6 @@
 var mysql = require('mysql');
 var bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 module.exports ={
 
@@ -50,6 +51,70 @@ module.exports ={
 			isAuthenticated : req.isAuthenticated(),
 			user : req.user
 		 });
-	}
+	},
 
+
+	postUserLogin: function(req, res, next) {
+
+		var config = require('.././database/config');
+		//		nos conectamos a la base de datos
+		var db = mysql.createConnection(config);
+		db.connect();
+		
+		var username = req.body.username
+		var password = req.body.password
+
+		db.query('SELECT * FROM users WHERE username = ?', username, function (err) {
+	   
+		if( !(username === username && password === password)){
+		  res.status(401).send({
+			error: 'usuario o contraseña inválidos'
+		  })
+		  return
+		}
+		
+	   user = {
+		   username: username,
+		   tipo: "feo",
+		   edad: "58"
+	   };
+		var tokenData = {
+		  user: user,
+		  extra: "lauti es re groso"
+		  // ANY DATA
+		}
+	   
+		var token = jwt.sign(tokenData, 'Secret Password', {
+		   expiresIn: 60 * 60 * 24 // expires in 24 hours
+		})
+	   
+		res.send({
+		  token: token
+		})
+	})
+	},
+
+	secure: function(req, res) {
+		var token = req.headers['authorization']
+		if(!token){
+			res.status(401).send({
+			error: "Es necesario el token de autenticación"
+			})
+			return
+		}
+	
+		token = token.replace('Bearer ', '')
+	
+		jwt.verify(token, 'Secret Password', function(err, user) {
+		if (err) {
+			res.status(401).send({
+			error: 'Token inválido'
+			})
+		} else {
+			res.send({
+			message: 'Correcto'
+			})
+		}
+		})
+	}
 };

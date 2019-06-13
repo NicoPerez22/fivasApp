@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../models/user.model';
 import { environment } from 'src/environments/environment';
+import { Http, Headers, RequestOptions} from '@angular/http';
+
+ 
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +16,12 @@ export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
+   httpOptions = {
+    headers: new HttpHeaders({
+      "Authorization": "Token " + localStorage.getItem('currentUser')
+    })
+  };
+  
   constructor(private http: HttpClient) {
       this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
       this.currentUser = this.currentUserSubject.asObservable();
@@ -23,7 +32,7 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string) {
-      return this.http.post<any>(`${environment.apiBaseUrl}auth/signin`, { username, password })
+      return this.http.post<any>(`${environment.apiBaseUrl}login`, { username, password })
           .pipe(map(user => {
               // login successful if there's a jwt token in the response
               if (user && user.token) {
@@ -31,7 +40,6 @@ export class AuthenticationService {
                   localStorage.setItem('currentUser', JSON.stringify(user));
                   this.currentUserSubject.next(user);
               }
-
               return user;
           }));
   }
@@ -42,5 +50,5 @@ export class AuthenticationService {
       this.currentUserSubject.next(null);
   }
 
-  
+
 }

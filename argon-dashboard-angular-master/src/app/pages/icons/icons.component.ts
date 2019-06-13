@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-icons',
@@ -8,8 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class IconsComponent implements OnInit {
 
   public copy: string;
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
+  }
+
+  crearTorneo() {
+    this.router.navigateByUrl("crear-torneo")
+  }
+
+  verTorneo() {
+    this.router.navigateByUrl("ver-torneo")
   }
 }

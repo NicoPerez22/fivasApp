@@ -14,6 +14,8 @@ import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminEquipoComponent } from 'src/app/pages/admin-equipo/admin-equipo.component';
 import { ReportesComponent } from 'src/app/pages/admin-equipo/reportes/reportes.component';
+import { VerTorneoComponent } from 'src/app/pages/icons/ver-torneo/ver-torneo.component';
+import { CrearTorneoComponent } from 'src/app/pages/icons/crear-torneo/crear-torneo.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -32,7 +34,9 @@ import { ReportesComponent } from 'src/app/pages/admin-equipo/reportes/reportes.
     IconsComponent,
     MapsComponent,
     AdminEquipoComponent,
-    ReportesComponent
+    ReportesComponent,
+    VerTorneoComponent,
+    CrearTorneoComponent
   ]
 })
 

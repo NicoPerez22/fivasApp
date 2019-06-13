@@ -17,34 +17,34 @@ export class AdminEquipoComponent implements OnInit {
   ngOnInit() {
   }
 
-  public cargandoImagen(files: FileList){
+  // public cargandoImagen(files: FileList){
 
-		this.enviandoImagen.postFileImagen(files[0]).subscribe(
+	// 	this.enviandoImagen.postFileImagen(files[0]).subscribe(
 
-			response => {
-				this.respuestaImagenEnviada = response; 
-				if(this.respuestaImagenEnviada <= 1){
-					console.log("Error en el servidor"); 
-				}else{
+	// 		response => {
+	// 			this.respuestaImagenEnviada = response; 
+	// 			if(this.respuestaImagenEnviada <= 1){
+	// 				console.log("Error en el servidor"); 
+	// 			}else{
 
-					if(this.respuestaImagenEnviada.code == 200 && this.respuestaImagenEnviada.status == "success"){
+	// 				if(this.respuestaImagenEnviada.code == 200 && this.respuestaImagenEnviada.status == "success"){
 
-						this.resultadoCarga = 1;
+	// 					this.resultadoCarga = 1;
 
-					}else{
-						this.resultadoCarga = 2;
-					}
+	// 				}else{
+	// 					this.resultadoCarga = 2;
+	// 				}
 
-				}
-			},
-			error => {
-				console.log(<any>error);
-			}
+	// 			}
+	// 		},
+	// 		error => {
+	// 			console.log(<any>error);
+	// 		}
 
-		);//FIN DE METODO SUBSCRIBE
+	// 	);//FIN DE METODO SUBSCRIBE
 
-    }
-	currentJustify = 'justified';
+  //   }
+	// currentJustify = 'justified';
 	
 	reportar() {
 		this.router.navigateByUrl('/reportes')

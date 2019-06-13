@@ -2,6 +2,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var mysql = require('mysql');
 var bcrypt = require('bcryptjs');
 
+
 module.exports = function (passport) {
 
 	passport.serializeUser(function (user, done) {
@@ -12,7 +13,7 @@ module.exports = function (passport) {
 		done(null, user);
 	});
 
-	//passport.deserializeUser((id, done)=>{ passport.deserializeUser((id, done) => { User.findById(id).then((user) => { done(null, user); }).catch(done); }); });
+	passport.deserializeUser((id, done)=>{ passport.deserializeUser((id, done) => { User.findById(id).then((user) => { done(null, user); }).catch(done); }); });
 
 	passport.use(new LocalStrategy({
 		passReqToCallback: true
